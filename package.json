@@ -1,0 +1,20 @@
+{
+  "name": "lostit-",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Flinstone70/LostIT-#readme",
+  "bugs": {
+    "url": "https://github.com/Flinstone70/LostIT-/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Flinstone70/LostIT-.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
