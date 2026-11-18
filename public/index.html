@@ -3,51 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Report Found Item | LostIT</title>
+    <title>LostIT | Home</title>
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-    <main class="container">
-        <h1>Report a Found Item</h1>
-        <p>Help someone reunite with their lost belongings.</p>
+    <header class="navbar">
+        <a href="/" class="logo">LostIT</a>
 
-        <form id="foundItemForm">
+        <nav>
+            <a href="/">Home</a>
+            <a href="report-lost.html">Report Lost</a>
+            <a href="report-found.html">Report Found</a>
+            <a href="claim-item.html">Claim Item</a>
+        </nav>
+    </header>
 
-            <label for="name">Item Name</label>
-            <input type="text" id="name" name="name" required>
+    <main class="dashboard">
 
-            <label for="category">Category</label>
-            <select id="category" name="category" required>
-                <option value="">Select a category</option>
-                <option value="Electronics">Electronics</option>
-                <option value="Accessories">Accessories</option>
-                <option value="Clothing">Clothing</option>
-                <option value="Documents">Documents</option>
-                <option value="Personal Belongings">Personal Belongings</option>
-                <option value="Others">Others</option>
-            </select>
+        <section class="welcome-section">
+            <h1>Welcome to LostIT</h1>
+            <p>
+                Lost something? Found something?
+                Let's help reunite lost belongings with their owners.
+            </p>
+        </section>
 
-            <label for="description">Description</label>
-            <textarea id="description" name="description" required></textarea>
+        <section class="action-section">
+            <h2>What would you like to do?</h2>
 
-            <label for="location">Location Found</label>
-            <input type="text" id="location" name="location" required>
+            <div class="action-cards">
 
-            <label for="dateFound">Date Found</label>
-            <input type="date" id="dateFound" name="dateFound" required>
+                <div class="action-card">
+                    <h3>Report Lost Item</h3>
+                    <p>Have you lost something? Submit a report to help find it.</p>
+                    <a href="report-lost.html" class="action-button">
+                        Report Lost
+                    </a>
+                </div>
 
-            <label for="contact">Contact Number</label>
-            <input type="tel" id="contact" name="contact" required>
+                <div class="action-card">
+                    <h3>Report Found Item</h3>
+                    <p>Found something? Report it to help its owner find it.</p>
+                    <a href="report-found.html" class="action-button">
+                        Report Found
+                    </a>
+                </div>
 
-            <button type="submit">Submit Found Item</button>
+                <div class="action-card">
+                    <h3>Claim Found Item</h3>
+                    <p>See something that belongs to you? Submit a claim.</p>
+                    <a href="claim-item.html" class="action-button">
+                        Claim Item
+                    </a>
+                </div>
 
-            <p id="formMessage"></p>
+            </div>
+        </section>
 
-        </form>
+        <section class="available-section">
+            <h2>Available Found Items</h2>
+            <p>Browse items that have been found and are waiting to be claimed.</p>
+
+            <div id="availableItems" class="items-grid">
+                <p>Loading available items...</p>
+            </div>
+        </section>
+
     </main>
 
-    <script src="js/senit-founditem.js"></script>
+    <footer>
+        <p>&copy; 2026 LostIT. Helping reunite lost belongings.</p>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
 
 </body>
 </html>

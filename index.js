@@ -9,16 +9,24 @@ const PORT = 3000;
 const publicFolder = path.join(__dirname, "public");
 
 const server = http.createServer(async (req, res) => {
+
+    // Common response headers
     res.setHeader("Access-Control-Allow-Origin", "*");
     res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
+    // Handle preflight requests
     if (req.method === "OPTIONS") {
         res.writeHead(204);
         return res.end();
     }
 
+    // ========================================
+    // POST: REPORT A FOUND ITEM
+    // ========================================
+
     if (req.method === "POST" && req.url === "/api/found-items") {
+
         let body = "";
 
         req.on("data", chunk => {
@@ -28,6 +36,7 @@ const server = http.createServer(async (req, res) => {
         req.on("end", async () => {
             try {
                 const item = JSON.parse(body);
+
                 const savedItem = await addFoundItem(item);
 
                 res.writeHead(201, {
@@ -41,6 +50,7 @@ const server = http.createServer(async (req, res) => {
                 }));
 
             } catch (error) {
+
                 res.writeHead(400, {
                     "Content-Type": "application/json"
                 });
@@ -55,7 +65,13 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
+
+    // ========================================
+    // GET: RETRIEVE FOUND ITEMS
+    // ========================================
+
     if (req.method === "GET" && req.url === "/api/found-items") {
+
         try {
             const items = await getFoundItems();
 
@@ -66,6 +82,9 @@ const server = http.createServer(async (req, res) => {
             res.end(JSON.stringify(items));
 
         } catch (error) {
+
+            console.error("Error retrieving found items:", error);
+
             res.writeHead(500, {
                 "Content-Type": "application/json"
             });
@@ -79,18 +98,28 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
+
+    // ========================================
+    // SERVE FRONTEND FILES
+    // ========================================
+
     const requestedPath = req.url === "/"
         ? "/index.html"
         : decodeURIComponent(req.url.split("?")[0]);
 
-    const filePath = path.resolve(publicFolder, "." + requestedPath);
+    const filePath = path.resolve(
+        publicFolder,
+        "." + requestedPath
+    );
 
+    // Prevent access outside public folder
     if (!filePath.startsWith(publicFolder + path.sep)) {
         res.writeHead(403);
         return res.end("Forbidden");
     }
 
     fs.readFile(filePath, (error, data) => {
+
         if (error) {
             res.writeHead(404);
             return res.end("File not found");
@@ -111,7 +140,13 @@ const server = http.createServer(async (req, res) => {
 
         res.end(data);
     });
+
 });
+
+
+// ========================================
+// START SERVER
+// ========================================
 
 server.listen(PORT, () => {
     console.log(`Server running at http://localhost:${PORT}`);

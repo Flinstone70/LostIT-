@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Found Item | LostIT</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <a href="/" class="logo">LostIT</a>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="report-lost.html">Report Lost</a>
+            <a href="report-found.html">Report Found</a>
+            <a href="claim-item.html">Claim Item</a>
+        </nav>
+    </header>
+
+    <!-- Report Found Item Form -->
+    <main class="container">
+
+        <h1>Report a Found Item</h1>
+
+        <p>Help someone reunite with their lost belongings.</p>
+
+        <form id="foundItemForm">
+
+            <label for="name">Item Name</label>
+            <input
+                type="text"
+                id="name"
+                name="name"
+                required
+            >
+
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="">Select a category</option>
+                <option value="Electronics">Electronics</option>
+                <option value="Accessories">Accessories</option>
+                <option value="Clothing">Clothing</option>
+                <option value="Documents">Documents</option>
+                <option value="Personal Belongings">Personal Belongings</option>
+                <option value="Others">Others</option>
+            </select>
+
+            <label for="description">Description</label>
+            <textarea
+                id="description"
+                name="description"
+                required
+            ></textarea>
+
+            <label for="location">Location Found</label>
+            <input
+                type="text"
+                id="location"
+                name="location"
+                required
+            >
+
+            <label for="dateFound">Date Found</label>
+            <input
+                type="date"
+                id="dateFound"
+                name="dateFound"
+                required
+            >
+
+            <label for="contact">Contact Number</label>
+            <input
+                type="tel"
+                id="contact"
+                name="contact"
+                required
+            >
+
+            <button type="submit">Submit Found Item</button>
+
+            <p id="formMessage"></p>
+
+        </form>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 LostIT. Helping reunite lost belongings.</p>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/senit-founditem.js"></script>
+
+</body>
+</html>
