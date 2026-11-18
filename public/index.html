@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LostIT | Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="/" class="logo">LostIT</a>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="report-lost.html">Report Lost</a>
+            <a href="report-found.html">Report Found</a>
+            <a href="claim-item.html">Claim Item</a>
+        </nav>
+    </header>
+
+    <main class="dashboard">
+
+        <section class="welcome-section">
+            <h1>Welcome to LostIT</h1>
+            <p>
+                Lost something? Found something?
+                Let's help reunite lost belongings with their owners.
+            </p>
+        </section>
+
+        <section class="action-section">
+            <h2>What would you like to do?</h2>
+
+            <div class="action-cards">
+
+                <div class="action-card">
+                    <h3>Report Lost Item</h3>
+                    <p>Have you lost something? Submit a report to help find it.</p>
+                    <a href="report-lost.html" class="action-button">
+                        Report Lost
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <h3>Report Found Item</h3>
+                    <p>Found something? Report it to help its owner find it.</p>
+                    <a href="report-found.html" class="action-button">
+                        Report Found
+                    </a>
+                </div>
+
+                <div class="action-card">
+                    <h3>Claim Found Item</h3>
+                    <p>See something that belongs to you? Submit a claim.</p>
+                    <a href="claim-item.html" class="action-button">
+                        Claim Item
+                    </a>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="available-section">
+            <h2>Available Found Items</h2>
+            <p>Browse items that have been found and are waiting to be claimed.</p>
+
+            <div id="availableItems" class="items-grid">
+                <p>Loading available items...</p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LostIT. Helping reunite lost belongings.</p>
+    </footer>
+
+    <script src="js/dashboard.js"></script>
+
+</body>
+</html>
