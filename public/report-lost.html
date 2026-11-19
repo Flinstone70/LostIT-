@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Report Lost Item | LostIT</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+        <a href="/" class="logo">LostIT</a>
+
+      <nav>
+        <a href="/">Home</a>
+        <a href="report-lost.html">Report Lost</a>
+        <a href="report-found.html">Report Found</a>
+        <a href="claim-item.html">Claim Item</a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Report a Lost Item</h1>
+
+      <p>
+        If you've lost an item, please fill out the form below to report it.
+      </p>
+
+      <form id="lostItemForm">
+        <label for="name">Item Name</label>
+        <input type="text" id="name" name="name" required />
+
+        <label for="category">Category</label>
+        <select id="category" name="category" required>
+          <option value="">Select a category</option>
+          <option value="Electronics">Electronics</option>
+          <option value="Accessories">Accessories</option>
+          <option value="Clothing">Clothing</option>
+          <option value="Documents">Documents</option>
+          <option value="Personal Belongings">Personal Belongings</option>
+          <option value="Others">Others</option>
+        </select>
+
+        <label for="description">Description</label>
+        <textarea id="description" name="description" required></textarea>
+
+        <label for="location">Last Seen Location</label>
+        <input type="text" id="location" name="location" required />
+
+        <label for="dateLost">Date Lost</label>
+        <input type="date" id="dateLost" name="dateLost" required />
+
+        <label for="contact">Contact Number</label>
+        <input type="tel" id="contact" name="contact" required />
+
+        <button type="submit">Submit Lost Item</button>
+
+        <p id="formMessage"></p>
+      </form>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 LostIT. Helping reunite lost belongings.</p>
+    </footer>
+    
+    <script src="js/xaven-lostitem.js"></script>
+  </body>
+</html>
