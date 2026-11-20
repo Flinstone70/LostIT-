@@ -42,11 +42,11 @@ lostItemForm.addEventListener("submit", async function (event) {
     return;
   }
 
-  const contactPattern = /^[0-9+\-\s]{8,15}$/;
+  const normalizedContact = lostItem.contact.replace(/[\s-]/g, "");
+  const contactPattern = /^(?:\+65)?[689]\d{7}$/;
 
-  if (!contactPattern.test(lostItem.contact)) {
-    formMessage.textContent =
-      "Contact number must contain 8 to 15 valid characters.";
+  if (!contactPattern.test(normalizedContact)) {
+    formMessage.textContent = "Enter a valid Singapore contact number.";
     formMessage.style.color = "red";
     return;
   }
