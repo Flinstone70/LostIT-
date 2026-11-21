@@ -4,6 +4,7 @@ const path = require("path");
 
 const { addFoundItem, getFoundItems } = require("./utils/SenitUtil");
 const { addLostItem } = require("./utils/XavenUtil");
+const { claimItem } = require("./utils/DanialUtil");
 
 const PORT = 3000;
 const publicFolder = path.join(__dirname, "public");
@@ -11,7 +12,7 @@ const publicFolder = path.join(__dirname, "public");
 const server = http.createServer(async (req, res) => {
   // Common response headers
   res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
 
   // Handle preflight requests
@@ -104,6 +105,51 @@ const server = http.createServer(async (req, res) => {
           }),
         );
       }
+    });
+
+    return;
+  }
+
+  // ========================================
+  // PUT: CLAIM ITEM
+  // ========================================
+
+  if (req.method === "PUT" && req.url.startsWith("/api/claim-item/")) {
+    console.log(req.url)
+    let body = "";
+    
+    req.on("data", (chunk) => {
+      body += chunk;
+    });
+
+    req.on("end", async () => {
+        try {
+            const id = req.url.split("/").pop();
+
+            const { username, contact } = JSON.parse(body);
+
+            const result = await claimItem(id, username, contact);
+
+            res.writeHead(200, {
+                "Content-Type": "application/json",
+            });
+
+            res.end(JSON.stringify({
+                success: true,
+                message: "Item claimed successfully.",
+                item: result,
+            }));
+
+        } catch (error) {
+            res.writeHead(error.statusCode || 500, {
+                "Content-Type": "application/json",
+            });
+
+            res.end(JSON.stringify({
+                success: false,
+                message: error.message,
+            }));
+        }
     });
 
     return;
