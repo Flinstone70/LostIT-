@@ -48,7 +48,7 @@ async function loadAvailableItems() {
             status.textContent = "Available";
 
             const claimButton = document.createElement("a");
-            claimButton.href = "claim-item.html";
+            claimButton.href = `claim-item.html?id=${item.id}`;
             claimButton.className = "action-button";
             claimButton.textContent = "Claim Item";
 
