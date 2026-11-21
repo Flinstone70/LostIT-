@@ -1,1 +1,13 @@
-﻿[]
+[
+  {
+    "id": "L1795250836851",
+    "name": "Iphone 16",
+    "category": "Electronics",
+    "description": "It is black color and have a small sticker in the cover",
+    "location": "Canteen 2",
+    "dateLost": "2026-11-21",
+    "contact": "91234567",
+    "status": "lost",
+    "createdAt": "2026-11-21T08:47:16.851Z"
+  }
+]
