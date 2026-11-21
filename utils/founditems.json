@@ -19,6 +19,10 @@
     "dateFound": "2026-11-21",
     "contact": "12345678",
     "status": "claimed",
-    "createdAt": "2026-11-21T05:56:25.699Z"
+    "createdAt": "2026-11-21T05:56:25.699Z",
+    "claimedBy": {
+      "username": "Denial",
+      "contact": "12345677"
+    }
   }
 ]

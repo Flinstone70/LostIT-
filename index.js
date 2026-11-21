@@ -126,7 +126,9 @@ const server = http.createServer(async (req, res) => {
         try {
             const id = req.url.split("/").pop();
 
-            const result = await claimItem(id);
+            const { username, contact } = JSON.parse(body);
+
+            const result = await claimItem(id, username, contact);
 
             res.writeHead(200, {
                 "Content-Type": "application/json",

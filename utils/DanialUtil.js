@@ -27,7 +27,7 @@ async function claimItem(id, username, contact) {
 
             //Update Status from "available" to "claimed"
             item[itemIndex].status = "claimed";
-            item[itemIndex].claimedBy = username, contact;
+            item[itemIndex].claimedBy = { username: username, contact: contact };
             
             //Save updated status
             await fs.writeFile(databasePath, JSON.stringify(item, null, 2), "utf8");

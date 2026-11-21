@@ -6,7 +6,7 @@ claimItemForm.addEventListener("submit", async function (event) {
     event.preventDefault();
 
     const claimDetails = {
-        name: document.getElementById("username").value.trim(),
+        username: document.getElementById("username").value.trim(),
         contact: document.getElementById("contact").value.trim(),
     }
 
@@ -22,12 +22,12 @@ claimItemForm.addEventListener("submit", async function (event) {
         const result = await response.json();
         console.log(result)
 
-        if (!result.ok){
+        if (!response.ok){
             throw new Error(result.message);
         }
 
         formMessage.textContent = result.message;
-        formMessage.style.color = "green"
+        formMessage.style.color = "green";
 
     } catch (error) {
         console.error(error);
