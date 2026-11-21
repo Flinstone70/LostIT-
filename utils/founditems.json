@@ -1,28 +1,2 @@
 [
-  {
-    "id": "F1794975138161",
-    "name": "dsadsa",
-    "category": "Documents",
-    "description": "dsdadsa",
-    "location": "dsa",
-    "dateFound": "2026-11-13",
-    "contact": "90454322",
-    "status": "available",
-    "createdAt": "2026-11-18T04:12:18.161Z"
-  },
-  {
-    "id": "F1795240585699",
-    "name": "dababesaba",
-    "category": "Accessories",
-    "description": "Domain Tenkai",
-    "location": "Over there",
-    "dateFound": "2026-11-21",
-    "contact": "12345678",
-    "status": "claimed",
-    "createdAt": "2026-11-21T05:56:25.699Z",
-    "claimedBy": {
-      "username": "Denial",
-      "contact": "12345677"
-    }
-  }
 ]
