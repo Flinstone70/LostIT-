@@ -10,6 +10,15 @@ claimItemForm.addEventListener("submit", async function (event) {
         contact: document.getElementById("contact").value.trim(),
     }
 
+    // Validate contact number
+    const contactFormat = /^[89]\d{7}$/;
+
+    if (!contactFormat.test(claimDetails.contact)) {
+        formMessage.textContent = "Enter a valid Singapore contact number";
+        formMessage.style.color = "red";
+        return;
+    }
+
     try {
         const response = await fetch(`/api/claim-item/${itemId}`, {
             method: "PUT",
