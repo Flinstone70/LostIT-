@@ -1,0 +1,16 @@
+#!/bin/sh
+
+echo "Running pre-commit checks..."
+
+# Check JavaScript syntax
+for file in $(git diff --cached --name-only --diff-filter=ACM | grep '\.js$'); do
+    node --check "$file"
+
+    if [ $? -ne 0 ]; then
+        echo "JavaScript syntax error found!"
+        exit 1
+    fi
+done
+
+echo "All checks passed!"
+exit 0
