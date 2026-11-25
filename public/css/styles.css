@@ -13,6 +13,9 @@ body {
     background-color: #f4f6f9;
     color: #333333;
     line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 a {
@@ -291,7 +294,7 @@ footer {
     color: #ffffff;
     text-align: center;
     padding: 20px;
-    margin-top: 50px;
+    margin-top: auto;
 }
 
 footer p {

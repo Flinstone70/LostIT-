@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LostIT | Home</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!--Nav bar-->
+    <header class="navbar">
+        <a href="/" class="logo">LostIT</a>
+
+        <nav>
+            <a href="/">Home</a>
+            <a href="report-lost.html">Report Lost</a>
+            <a href="report-found.html">Report Found</a>
+            <a href="found-items.html">Claim Item</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h1>Claim Item</h1>
+
+        <p>Claim your belongings.</p>
+
+        <form id="claimItemForm">
+
+            <label for="name">Name</label>
+            <input
+                type="text"
+                id="username"
+                name="username"
+                required
+            >
+
+            <label for="contact">Contact Number</label>
+            <input
+                type="tel"
+                id="contact"
+                name="contact"
+                required
+            >
+
+            <button type="submit">Submit Found Item</button>
+
+            <p id="formMessage"></p>
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 LostIT. Helping reunite lost belongings.</p>
+    </footer>
+
+    <!--JavaScript-->
+    <script src="js/danial-claimitem.js"></script>
+</body>
+</html>
